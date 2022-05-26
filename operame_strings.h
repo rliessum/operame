@@ -20,6 +20,8 @@ struct Texts {
         *config_co2_blink,
         *config_mqtt,
         *config_mqtt_server,
+        *config_mqtt_username,
+        *config_mqtt_password,        
         *config_mqtt_port,
         *config_max_failures,
         *config_mqtt_topic,
@@ -67,6 +69,8 @@ bool select(Texts& T, String language) {
         T.config_co2_blink = "Blink from [ppm]";
         T.config_mqtt = "Publish measurements via the MQTT protocol";
         T.config_mqtt_server = "Broker";  // probably should not be translated
+        T.config_mqtt_username = "Username";
+        T.config_mqtt_password = "Password";
         T.config_mqtt_port = "Broker TCP port";
         T.config_max_failures = "Number of failed connections before automatic restart";
         T.config_mqtt_topic = "Topic";  // probably should not be translated
@@ -133,6 +137,8 @@ bool select(Texts& T, String language) {
         T.config_co2_blink = "Knipperen vanaf [ppm]";
         T.config_mqtt = "Metingen via het MQTT-protocol versturen";
         T.config_mqtt_server = "Broker";  // zo heet dat in MQTT
+        T.config_mqtt_username = "Broker Gebruikersnaam";
+        T.config_mqtt_password = "Broker Password";
         T.config_mqtt_port = "Broker TCP-poort";
         T.config_max_failures = "Aantal verbindingsfouten voor automatische herstart";
         T.config_mqtt_topic = "Topic";  // zo heet dat in MQTT

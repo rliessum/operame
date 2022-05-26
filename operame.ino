@@ -40,6 +40,8 @@ String          mqtt_template;
 bool            add_units;
 bool            wifi_enabled;
 bool            mqtt_enabled;
+String          mqtt_username;
+String          mqtt_password;
 int             max_failures;
 
 void retain(const String& topic, const String& message) {
@@ -208,7 +210,7 @@ void connect_mqtt() {
     if (mqtt.connected()) return;  // already/still connected
 
     static int failures = 0;
-    if (mqtt.connect(WiFiSettings.hostname.c_str())) {
+    if (mqtt.connect(WiFiSettings.hostname.c_str(), mqtt_username.c_str(), mqtt_password.c_str(), false)) {
         failures = 0;
     } else {
         failures++;
@@ -385,6 +387,8 @@ void setup() {
     WiFiSettings.heading("MQTT");
     mqtt_enabled  = WiFiSettings.checkbox("operame_mqtt", false, T.config_mqtt) && wifi_enabled;
     String server = WiFiSettings.string("mqtt_server", 64, "", T.config_mqtt_server);
+    mqtt_username = WiFiSettings.string("mqtt_username", 64, "", T.config_mqtt_username);
+    mqtt_password = WiFiSettings.string("mqtt_password", 64, "", T.config_mqtt_password);
     int port      = WiFiSettings.integer("mqtt_port", 0, 65535, 1883, T.config_mqtt_port);
     max_failures  = WiFiSettings.integer("operame_max_failures", 0, 1000, 10, T.config_max_failures);
     mqtt_topic  = WiFiSettings.string("operame_mqtt_topic", WiFiSettings.hostname, T.config_mqtt_topic);
