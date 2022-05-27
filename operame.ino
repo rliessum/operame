@@ -393,7 +393,8 @@ void setup() {
     max_failures  = WiFiSettings.integer("operame_max_failures", 0, 1000, 10, T.config_max_failures);
     mqtt_topic  = WiFiSettings.string("operame_mqtt_topic", WiFiSettings.hostname, T.config_mqtt_topic);
     mqtt_interval = 1000UL * WiFiSettings.integer("operame_mqtt_interval", 10, 3600, 60, T.config_mqtt_interval);
-    mqtt_template = WiFiSettings.string("operame_mqtt_template", "{} PPM", T.config_mqtt_template);
+    // mqtt_template = WiFiSettings.string("operame_mqtt_template", "{} PPM", T.config_mqtt_template);
+    mqtt_template = WiFiSettings.string("operame_mqtt_template", "{}", T.config_mqtt_template);
     WiFiSettings.info(T.config_template_info);
 
     WiFiSettings.onConnect = [] {
