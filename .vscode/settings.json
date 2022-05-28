@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "functional": "cpp"
+        "functional": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "list": "cpp"
     }
 }

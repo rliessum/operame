@@ -15,6 +15,7 @@ struct Texts {
         *error_format,
         *config_wifi,
         *config_ota,
+        *config_pm,
         *config_co2_warning,
         *config_co2_critical,
         *config_co2_blink,
@@ -63,6 +64,7 @@ bool select(Texts& T, String language) {
         T.error_format = "Formatting failed";
         T.wait = "wait...";
         T.config_wifi = "Use WiFi connection";
+        T.config_pm = "Enable Stofrader";
         T.config_ota = "Enable wireless reprogramming. (Uses portal password!)";
         T.config_co2_warning = "Yellow from [ppm]";
         T.config_co2_critical = "Red from [ppm]";
@@ -132,6 +134,7 @@ bool select(Texts& T, String language) {
         T.wait = "wacht...";
         T.config_wifi = "WiFi-verbinding gebruiken";
         T.config_ota = "Draadloos herprogrammeren inschakelen. (Gebruikt portaalwachtwoord!)";
+        T.config_pm = "Stofrader inschakelen";
         T.config_co2_warning = "Geel vanaf [ppm]";
         T.config_co2_critical = "Rood vanaf [ppm]";
         T.config_co2_blink = "Knipperen vanaf [ppm]";
